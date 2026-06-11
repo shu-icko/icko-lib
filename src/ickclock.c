@@ -58,7 +58,6 @@ void ickclock_reset(ickclock_t* tar) {
 int ickwait(void* tar) {
   ickclock_t* clock = tar;
   time_t clock_len = clock -> clen;
-  ickclock_set(clock, TC_JOB);
   if (clock -> clock_mode == TC_TICK) {
     while (clock -> clock_status != TC_TERMINATE)
     { thrd_yield(); }
